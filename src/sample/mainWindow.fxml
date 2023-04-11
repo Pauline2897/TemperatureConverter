@@ -1,0 +1,38 @@
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <Label text="From:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="inputUnitComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Celsius"/>
+                <String fx:value="Fahrenheit"/>
+                <String fx:value="Kelvin"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Label text="To:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+    <ComboBox fx:id="outputUnitComboBox" GridPane.rowIndex="0" GridPane.columnIndex="3">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Celsius"/>
+                <String fx:value="Fahrenheit"/>
+                <String fx:value="Kelvin"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Label text="Enter temperature:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="inputTextField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="Result:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <TextField fx:id="resultTextField" disable="true" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+    <Button text="Convert" onAction="#convertTemperature" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="4"
+            GridPane.halignment="CENTER"/>
+</GridPane>
